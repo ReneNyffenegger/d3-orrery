@@ -95,6 +95,7 @@ var substitutes = {
   "Charon": "cha",
 };
 
+/* tq84
 THREEx.Planets.createSun = function() { return THREEx.Planets.create("sol"); };
 THREEx.Planets.createMercury = function() { return THREEx.Planets.create("mer"); };
 THREEx.Planets.createVenus = function() { return THREEx.Planets.create("ven"); };
@@ -110,7 +111,9 @@ THREEx.Planets.createUranusRing = function() { return THREEx.Planets.createRing(
 THREEx.Planets.createNeptune = function() { return THREEx.Planets.create("nepe"); };
 THREEx.Planets.createNeptuneRing = function() { return THREEx.Planets.createRing("nep"); };
 THREEx.Planets.createPluto = function() { return THREEx.Planets.create("plu"); };
+*/
 
+/*
 THREEx.Planets.createStarfield = function() {
   var loader = new THREE.TextureLoader();
   var texture = loader.load(THREEx.Planets.baseURL + "tycho-skymap.jpg");
@@ -122,6 +125,7 @@ THREEx.Planets.createStarfield = function() {
   var mesh = new THREE.Mesh(geometry, material)
   return mesh  
 }
+*/
     
 // Create body, skipextras true -> don't create cloud, ring etc.
 THREEx.Planets.create = function(body, skipextras) {
