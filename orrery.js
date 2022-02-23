@@ -2224,7 +2224,7 @@ var settings = {
   date: true,          // Show date on map with date picker on click
   dateformat: "%Y-%m-%d",  // Date format string 
                        // (see https://github.com/d3/d3-time-format/blob/master/README.md#timeFormat)
-//container: "orrery-map", // ID of parent element, e.g. div
+  container: "orrery-map", // ID of parent element, e.g. div
   datapath: "data/",   // Path/URL to data files, empty = subfolder 'data'
   imagepath: "images/",   // Path/URL to image files, empty = subfolder 'images'
   planets: {          
@@ -2301,16 +2301,17 @@ Orrery.display = function(config, date) {
 //  Called fom viewer.html
 //
   var dt = date || new Date(),
-      interval = 86400, 
+//    interval = 86400, 
       parID = null; 
 
   cfg = settings.set(config); 
 
+  let div_id = 'orrery-map';
 //parNode = $(cfg.container);
 //parNode = document.getElementById(cfg.container);
-  parNode = document.getElementById('orrery-map'); // the html file has a div with id = 'orrery-map'
+  parNode = document.getElementById(div_id); // the html file has a div with id = 'orrery-map'
   if (parNode) { 
-    parID = "#" + cfg.container;
+    parID = "#" + div_id;
     var stl = window.getComputedStyle(parNode, null);
     if (!parseInt(stl.width) && !cfg.width) parNode.style.width = px(window.innerWidth);    
     if (!parseInt(stl.height) && !cfg.height) parNode.style.height = px(window.innerHeight);    
