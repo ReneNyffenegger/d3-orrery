@@ -2286,6 +2286,9 @@ var Orrery = {
   version: '0.5'
 };
 
+
+ 
+
 var container, parNode, renderer, scene, camera,
     width, height, cfg, sbomesh,
     renderFcts= [];
@@ -2293,7 +2296,7 @@ var container, parNode, renderer, scene, camera,
 THREEx.Planets.baseURL = "images/maps/";
 THREEx.Planets.scale = 0.1;
 
-var display = function(config, date) {
+Orrery.display = function(config, date) {
 //
 //  Called fom viewer.html
 //
@@ -2519,7 +2522,6 @@ function init() {
   });
 }
 
-Orrery.display = display;
 Orrery.update = update;
 Orrery.animate = function(dt) {
   update(dt);
