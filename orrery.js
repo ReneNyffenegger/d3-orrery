@@ -1725,7 +1725,7 @@ function popError(nd, err) {
 
 var deg2rad = Math.PI / 180;
 
-function $(id) { return document.getElementById(id); }
+// function $(id) { return document.getElementById(id); }
 function px(n) { return n + "px"; } 
 function Round(x, dg) { return(Math.round(Math.pow(10,dg)*x)/Math.pow(10,dg)); }
 function sign(x) { return x ? x < 0 ? -1 : 1 : 0; }
@@ -2224,7 +2224,7 @@ var settings = {
   date: true,          // Show date on map with date picker on click
   dateformat: "%Y-%m-%d",  // Date format string 
                        // (see https://github.com/d3/d3-time-format/blob/master/README.md#timeFormat)
-  container: "orrery-map", // ID of parent element, e.g. div
+//container: "orrery-map", // ID of parent element, e.g. div
   datapath: "data/",   // Path/URL to data files, empty = subfolder 'data'
   imagepath: "images/",   // Path/URL to image files, empty = subfolder 'images'
   planets: {          
@@ -2294,13 +2294,18 @@ THREEx.Planets.baseURL = "images/maps/";
 THREEx.Planets.scale = 0.1;
 
 var display = function(config, date) {
+//
+//  Called fom viewer.html
+//
   var dt = date || new Date(),
       interval = 86400, 
       parID = null; 
 
   cfg = settings.set(config); 
 
-  parNode = $(cfg.container);
+//parNode = $(cfg.container);
+//parNode = document.getElementById(cfg.container);
+  parNode = document.getElementById('orrery-map'); // the html file has a div with id = 'orrery-map'
   if (parNode) { 
     parID = "#" + cfg.container;
     var stl = window.getComputedStyle(parNode, null);
